@@ -1,0 +1,98 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: #1953cf6b;  /* Changed to sky blue */
+    color: #292626;
+}
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+input[type="text"] {
+    width: 300px;
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+button#copy {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+button#copy:hover {
+    background-color: #333;
+}
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 0;
+    animation: typing 4s steps(70) forwards,
+               blink .75s step-end ;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #6323b6 }
+}
+
+.typing-animation::before {
+    
+    content: "Your ultimate Password Generator to secure your credentials from random guesses...........................";
+}
+
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.2; /* Adjust the opacity to make it less distracting */
+    
+}
+
+/* Add a container for the video */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
